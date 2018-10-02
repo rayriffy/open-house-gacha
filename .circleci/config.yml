@@ -1,4 +1,5 @@
-version: 2 jobs:
+version: 2
+jobs:
   build:
     working_directory: ~/workspace
     docker:
@@ -62,7 +63,6 @@ version: 2 jobs:
             cd rayriffy-com/web/data/html/openhouse.rayriffy.com
             ls -l -a
             rm -rf .git/
-            rm -rf .gitignore
             rm -rf .circleci/
             mv ~/tmp/.env ./.env
       - run:

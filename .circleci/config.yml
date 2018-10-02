@@ -7,9 +7,6 @@ jobs:
         auth:
           username: $REGISTRY_USER
           password: $REGISTRY_PASS
-        environment:
-          DEPLOY_HOST: $DEPLOY_HOST
-          DEPLOY_COMMAND: $DEPLOY_COMMAND
       # - image: mysql:5.7
       #   command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin environment:
       #     MYSQL_USER: homestead MYSQL_PASSWORD: secret MYSQL_DATABASE: homestead MYSQL_ALLOW_EMPTY_PASSWORD: true
@@ -73,7 +70,8 @@ jobs:
             git config --global user.email bot@rayriffy.com
             git add .
             git commit -m "[AUTO] openhouse.rayriffy.com Deploy Triggered"
-            git push origin master workflows:
+            git push origin master
+workflows:
   version: 2
   build-and-deploy:
     jobs:
